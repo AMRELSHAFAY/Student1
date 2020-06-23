@@ -1,0 +1,18 @@
+﻿@model Student
+@{
+    ViewData["Title"] = "EditStudent";
+}
+
+    <form method="post">
+        <input type="text" value="@Model.id" name="stdl.id" />
+        <input type="text" value="@Model.Name" name="stdl.Name" />
+        <input type="text" value="@Model.Age" name="stdl.Age" />
+       
+        <div class="form-group">
+            <label asp-for="DeptID" name="stdl.Department.DeptName" class="control-label"></label>
+            <select asp-for="DeptID"  name="stdl.Department.DeptName" class="form-control" asp-items="ViewBag.DeptID"></select>
+        </div>
+
+        <input type="submit" value="Save Changes" />
+    </form>
+

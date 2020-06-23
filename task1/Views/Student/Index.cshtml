@@ -1,0 +1,24 @@
+﻿@model List<Student>
+<table class="table table-bordered table-hover" >
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Age</td>
+        <td>Department</td>
+        <td colspan="3">Operation</td>
+    </tr>
+
+    @foreach(var item in Model)
+    {
+<tr>
+    <td>@item.id</td>
+    <td>@item.Name</td>
+    <td>@item.Age</td>
+    <td>@item.Department.DeptName</td>
+    <td> @Html.ActionLink("Edit", "EditStudent", "Student", new { id = item.id }, new { @class = "btn btn-danger" })</td>
+    <td> @Html.ActionLink("Delete", "DeleteStudent", "Student", new { id = item.id }, new { @class = "btn btn-danger" })</td>
+    <td> @Html.ActionLink("Details", "Details", "Student", new { id = item.id }, new { @class = "btn btn-danger" })</td>
+</tr>
+    }
+
+</table>
